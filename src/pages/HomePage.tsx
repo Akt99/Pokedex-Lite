@@ -33,9 +33,11 @@ export default function HomePage() {
 
   return (
     <div className="container">
-      <h2>Pokédex Lite </h2>
-      <h5> (Page {page + 1}) </h5>
+        <div style={{ marginBottom: 20 }}>
 
+      <h1 className="pokedex-title">Pokédex Lite</h1>
+      <h5 className="pokedex-subtitle"> (Page {page + 1}) </h5>
+    </div>
       {/* SEARCH */}
       <input
         type="text"
@@ -53,6 +55,7 @@ export default function HomePage() {
       {/* TYPE FILTER */}
       <select
         value={selectedType}
+        
         onChange={(e) => {
           setSelectedType(e.target.value);
           setPage(0); // UX FIX: reset pagination on filter change

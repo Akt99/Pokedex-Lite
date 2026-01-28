@@ -1,3 +1,14 @@
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .pokemon-card {
   background: #ffffff;
   border-radius: 12px;
@@ -11,8 +22,40 @@
 }
 
 .pokemon-card img {
-  width: 96px;
-  height: 96px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   display: block;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #efe4e4;
+  color: #111;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.pokedex-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.pokedex-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0 0;
+}
+
+
+.pokedex-title {
+  animation: fadeSlideIn 0.4s ease-out;
 }
