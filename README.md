@@ -7,6 +7,55 @@ Users can browse Pokémon with pagination, search and filter them by type, mark 
 
 
 
+## Challenges Faced & Solutions
+
+### Client-Side Routing in Production
+
+**Problem:**
+Refreshing routes such as `/pokemon/pikachu` resulted in **404 errors** after deployment because the hosting platform attempted to resolve routes on the server instead of the client.
+
+**Solution:**
+Configured platform-specific **rewrite rules** to redirect all requests to `index.html`, allowing **React Router** to correctly handle client-side navigation.
+
+---
+
+### Pokémon Image Resolution Issues
+
+**Problem:**
+Pokémon image URLs differed based on whether data was fetched using a Pokémon **name** or **ID**, leading to inconsistent or broken images.
+
+**Solution:**
+Extracted the Pokémon ID from the API URL and dynamically constructed the **official artwork image URL**, with proper fallback handling to ensure images always render correctly.
+
+---
+
+### Performance During Search
+
+**Problem:**
+Filtering the Pokémon list on every keystroke caused unnecessary re-renders and reduced performance.
+
+**Solution:**
+Implemented a **debounced search mechanism** using a custom `useDebounce` hook to limit state updates and improve UI responsiveness.
+
+---
+
+### Persisting Favorites
+
+**Problem:**
+Favorite Pokémon selections were lost on page refresh.
+
+**Solution:**
+Stored favorites in **localStorage** and synchronized them across the app using a dedicated `useFavorites` custom hook.
+
+---
+
+## Possible Enhancements
+
+* Server-side pagination with caching
+* Type badges and themed Pokémon cards
+* Skeleton loaders for improved user experience
+* Accessibility improvements (ARIA roles, keyboard navigation)
+* Unit and integration tests
 
 
 ## Features
@@ -61,3 +110,12 @@ Users can browse Pokémon with pagination, search and filter them by type, mark 
 ```bash
 git clone https://github.com/Akt99/Pokedex-Lite.git
 cd Pokedex-Lite
+## Installation & Running Locally
+
+### 1. Install dependencies
+```bash
+npm install
+2. Start the development server
+npm run dev
+
+
