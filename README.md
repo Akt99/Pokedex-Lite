@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Pokédex Lite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pokédex Lite is a modern, responsive web application built using React and TypeScript that allows users to explore Pokémon data fetched from the public PokéAPI.  
+Users can browse Pokémon with pagination, search and filter them by type, mark favorites, and view detailed Pokémon information.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Fetches Pokémon data from PokéAPI
+- Paginated Pokémon listing
+- Search Pokémon by name (debounced)
+- Filter Pokémon by type
+- Mark Pokémon as favorites
+- Persist favorites using localStorage
+- Dedicated Favorites page
+- Pokémon detail view including:
+  - Official artwork
+  - Base stats
+  - Abilities
+- Global loading indicator
+- Fully responsive UI (mobile, tablet, desktop)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack & Libraries
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Frontend
+- **React 18** – Component-based UI with hooks
+- **TypeScript** – Type safety and better developer experience
+- **Vite** – Fast development server and optimized production builds
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Routing
+- **react-router-dom** – Client-side routing for page navigation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### State & Utilities
+- **Custom React Hooks**
+  - `usePokemonList`
+  - `usePokemonDetail`
+  - `useFavorites`
+  - `useDebounce`
+- **localStorage** – Persist favorite Pokémon across sessions
+
+### UI & Styling
+- **CSS (Global styles)** – Lightweight styling without external frameworks
+- **Lucide React** – Icon set for UI elements
+- **JetBrains Mono** – Monospace font for a niche, developer-centric look
+
+### API
+- **PokéAPI** – Public REST API for Pokémon data
+
+---
+
+## Installation & Running Locally
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Akt99/Pokedex-Lite.git
+cd Pokedex-Lite
