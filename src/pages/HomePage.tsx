@@ -3,6 +3,7 @@ import { usePokemonList } from '../hooks/usePokemonList';
 import PokemonCard from '../components/pokemon/PokemonCard';
 import { useDebounce } from '../hooks/useDebounce';
 import { POKEMON_TYPES } from '../utils/constants';
+import Loader from '../components/common/Loader';
 
 export default function HomePage() {
   const {
@@ -74,7 +75,7 @@ export default function HomePage() {
         ))}
       </select>
 
-      {loading && <p>Loading…</p>}
+      {loading && <Loader / >}
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <div className="pokemon-grid">
