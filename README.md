@@ -105,17 +105,14 @@ Stored favorites in **localStorage** and synchronized them across the app using 
 ---
 
 ## Installation & Running Locally
+1. Clone the repository
+`git clone https://github.com/Akt99/Pokedex-Lite.git`
+`cd Pokedex-Lite`
+2. Install dependencies
+`npm install`
+3. Start the development server
+`npm run dev`
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/Akt99/Pokedex-Lite.git
-cd Pokedex-Lite
-## Installation & Running Locally
+The app will be available at:
 
-### 1. Install dependencies
-```bash
-npm install
-2. Start the development server
-npm run dev
-
-
+http://localhost:5173
