@@ -4,8 +4,8 @@ Pokédex Lite is a modern, responsive web application built using React and Type
 Users can browse Pokémon with pagination, search and filter them by type, mark favorites, and view detailed Pokémon information.
 
 ---
-
-
+Deployed at: https://6979ce3572d2893bdd125d59--lucky-cobbler-79175e.netlify.app/
+---
 
 ## Challenges Faced & Solutions
 
