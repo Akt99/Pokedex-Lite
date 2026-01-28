@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { usePokemonList } from '../hooks/usePokemonList';
 import PokemonCard from '../components/pokemon/PokemonCard';
 import { useDebounce } from '../hooks/useDebounce';
